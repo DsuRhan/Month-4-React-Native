@@ -166,7 +166,7 @@ const App: React.FC = () => {
         onViewableItemsChanged={onViewableItemsChanged}
         ListHeaderComponent={<Text style={styles.listHeader}>Daftar Produk</Text>}
         ListFooterComponent={<Text style={styles.listFooter}>-- Akhir Daftar --</Text>}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}/*Do not define components during render. React will see a new component type on every render and destroy the entire subtree’s DOM nodes and state (https://reactjs.org/docs/reconciliation.html#elements-of-different-types). Instead, move this component definition out of the parent component “App” and pass data as props. If you want to allow component creation in props, set allowAsProps option to true.*/
       />
 
       {/* SECTIONLIST SECTION */}
@@ -193,7 +193,7 @@ const App: React.FC = () => {
             progressBackgroundColor="#dcfce7"
           />
         }
-        ItemSeparatorComponent={() => <View style={styles.sectionSeparator} />}
+        ItemSeparatorComponent={() => <View style={styles.sectionSeparator} />}/*Do not define components during render. React will see a new component type on every render and destroy the entire subtree’s DOM nodes and state (https://reactjs.org/docs/reconciliation.html#elements-of-different-types). Instead, move this component definition out of the parent component “App” and pass data as props. If you want to allow component creation in props, set allowAsProps option to true.*/
         ListEmptyComponent={<Text style={styles.emptyText}>Tidak ada data</Text>}
       />
     </ScrollView>
